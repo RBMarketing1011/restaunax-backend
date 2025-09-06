@@ -1,7 +1,7 @@
 # RestaunaX Backend API Documentation
 
 ## Overview
-This document provides a comprehensive breakdown of all API routes in the RestaunaX restaurant management system. The backend uses Next.js API routes with Prisma ORM for database operations and NextAuth.js for authentication.
+This document provides a comprehensive breakdown of all API routes in the RestaunaX restaurant management system. The backend uses Prisma ORM for database operations.
 
 ## Database Schema
 - **User**: User accounts with email verification
@@ -10,7 +10,7 @@ This document provides a comprehensive breakdown of all API routes in the Restau
 - **OrderItem**: Individual items within orders
 
 ## Authentication
-All protected routes require authentication via NextAuth.js session tokens.
+All protected routes require authentication
 
 ---
 
