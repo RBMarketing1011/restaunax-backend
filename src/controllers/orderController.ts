@@ -26,9 +26,9 @@ export class OrderController
       const whereClause: any = {}
 
       // If using JWT authentication, filter by user's account
-      if ((req as AuthenticatedRequest).user?.accountId)
+      if ((req as AuthenticatedRequest).user?.account?.id)
       {
-        whereClause.accountId = (req as AuthenticatedRequest).user.accountId
+        whereClause.accountId = (req as AuthenticatedRequest).user.account.id
       }
       // For API key auth, return all orders (or you can add specific logic here)
 
@@ -55,7 +55,7 @@ export class OrderController
       })
 
       // Transform data to match API spec
-      const transformedOrders = orders.map(order => ({
+      const transformedOrders = orders.map((order: any) => ({
         id: order.id,
         accountId: order.accountId,
         customerName: order.customerName,
@@ -98,7 +98,7 @@ export class OrderController
       const total = items.reduce((sum, item) => sum + (item.price * item.quantity), 0)
 
       // Create order with items in a transaction
-      const order = await (req as RequestWithPrisma).prisma.$transaction(async (prisma) =>
+      const order = await (req as RequestWithPrisma).prisma.$transaction(async (prisma: any) =>
       {
         // Create order
         const newOrder = await prisma.order.create({

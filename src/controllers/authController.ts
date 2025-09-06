@@ -60,7 +60,7 @@ export class AuthController
       const tokenExpiry = new Date(Date.now() + 24 * 60 * 60 * 1000) // 24 hours from now
 
       // Use transaction to create user, account, and verification token
-      const result = await (req as RequestWithPrisma).prisma.$transaction(async (prisma) =>
+      const result = await (req as RequestWithPrisma).prisma.$transaction(async (prisma: any) =>
       {
         // Create user first (without account association, email NOT verified)
         const user = await prisma.user.create({
@@ -318,7 +318,7 @@ export class AuthController
       }
 
       // Mark user as verified and delete the verification token
-      await (req as RequestWithPrisma).prisma.$transaction(async (prisma) =>
+      await (req as RequestWithPrisma).prisma.$transaction(async (prisma: any) =>
       {
         // Update user email verification
         await prisma.user.update({

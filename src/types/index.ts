@@ -1,5 +1,9 @@
 import { Request } from 'express'
-import { PrismaClient, User, Account } from '@prisma/client'
+import { PrismaClient, Prisma } from '@prisma/client'
+
+// Use Prisma generated types
+type User = Prisma.UserGetPayload<{}>
+type Account = Prisma.AccountGetPayload<{}>
 
 export interface AuthenticatedUser extends User
 {

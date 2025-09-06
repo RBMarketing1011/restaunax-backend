@@ -77,7 +77,7 @@ export class AccountController
 
       // Delete the account and ALL associated data
       // Using transaction to ensure data consistency
-      await (req as RequestWithPrisma).prisma.$transaction(async (prisma) =>
+      await (req as RequestWithPrisma).prisma.$transaction(async (prisma: any) =>
       {
         // First, check if account exists
         const account = await prisma.account.findUnique({
