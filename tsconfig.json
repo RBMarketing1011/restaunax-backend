@@ -20,7 +20,9 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "exactOptionalPropertyTypes": true
+    "exactOptionalPropertyTypes": true,
+    "noEmitOnError": true,
+    "incremental": true
   },
   "include": [
     "src/**/*"
@@ -29,6 +31,7 @@
     "node_modules",
     "dist",
     "**/*.test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.js"
   ]
 }
