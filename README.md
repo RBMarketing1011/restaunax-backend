@@ -51,20 +51,6 @@ npm run dev
 # Health check
 curl -H "x-api-key: simple-auth-key-123" http://localhost:8081/api/health
 
-# Register user
-curl -X POST -H "Content-Type: application/json" -H "x-api-key: simple-auth-key-123" \
-  -d '{"name":"John","email":"john@test.com","password":"password123"}' \
-  http://localhost:8081/api/auth/register
-```
-
-## Key Endpoints
-
-**Auth:** `/api/auth/register`, `/api/auth/check-credentials`, `/api/auth/verify-email`  
-**Users:** `/api/user/profile/:id`, `/api/user/change-password/:id`  
-**Accounts:** `/api/account/profile/:id`, `/api/account/delete/:id`  
-**Orders:** `/api/orders` (GET/POST), `/api/orders/:id` (PATCH/DELETE)  
-**Dev:** `/api/health`, `/api/dev/reset-db`
-
 ## Tech Stack
 
 - **Backend:** Node.js, Express, TypeScript
